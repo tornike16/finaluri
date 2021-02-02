@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fixed Header with html and css Collapsing Header Tutorials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+    <style>
+        #map {
+            position: fixed;
+            top: 450px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    var map = L.map('map').setView([0, 0], 1);
+
+    L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=zM60Ymgz9v18OZhhydp1', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
+    var marker = L.marker([23, 56]).addTo(map);
+    marker.bindPopup("<b>იავური მარტორქა</b><br>ოდესღაც იავური მარტორქა აზიურ მარტორქებს შორის ყველაზე გავრცელებული სახეობა იყო, ხოლო ახლა ის გადაშენების პირას მყოფი ცხოველია.\n" +
+        "\n" +
+        "ეს სახეობა დიდ ძუძუმწოვრებს შორის ერთ-ერთი ყველაზე იშვიათია. მსოფლიოში დაახლოებით 50-70 იავური მარტორქა შემორჩა და ყველა მათგანი დაცულ ტერიტორიაზე, ზედამხედველობის ქვეშ ცხოვრობს. როგორც ცნობილია, მარტორქები (მისი ძვირფასი რქის გამო) ხშირად ხდებიან ბრაკონიერების თავდასხმის ობიექტები, რასაც სახეობის გადაშენებამდე მივყავართ. ასევე, ვიეტნამის ომი ერთ-ერთი მთავარი მიზეზია მათი შემცირებისა. სამწუხაროდ, ერთადერთი ადგილი, სადაც იავური მარტორქა შეგხვდებათ, უჯუნგ-კულონის ეროვნული პარკია (ინდონეზია, იავას კუნძული).").openPopup();
+    var marker = L.marker([30, 40]).addTo(map);
+    marker.bindPopup("<b>ვაკიტა</b><br>სამწუხაროდ, მსოფლიოში შემორჩა სულ რაღაც 30-მდე ვაკიტა, რომლებიც ერთ კონკრეტულ ადგილას ბინადრობენ. ისინი ხშირად ხვდებიან თევზსაჭერ ბადეებში, ასევე, ხდებიან ბრაკონიერების მსხვერპლნი. გარდა ამისა, მათ სიცოცხლეს საფრთხეს უქმნის ქლორილებული პესტიციდები და სარწყავი მილები.\n").openPopup();
+    var marker = L.marker([50, 10]).addTo(map);
+    marker.bindPopup("<b>მთის გორილა</b><br>ამჟამად ველურ ბუნებაში ათასამდე მთის გორილა ბინადრობს. სპეციალისტებს დიდი ძალისხმევა დასჭირდათ ამ ინდივიდის გადასარჩენად, რის შემდეგაც (2018 წელს) ამ პრიმატმა \"გადაშენების პირას მყოფი ცხოველების\" სიიდან \"წითელ წიგნში\" გადაინაცვლა. მიუხედავად ამისა, ბრაკონიერები, გარემოს დაბინძურება, მათი ბინადრობის ტერიტორიების განადგურება და დაავადებები მთის გორილებს გადაშენების საფრთხეს კვლავ უქმნის. პრიმატები ხშირად ხდებიან ბრაკონიერების თავდასხმის ობიექტები. ისინი მათ ხორცზე ნადირობენ. გარდა ამისა, ახალგაზრდა ინდივიდები ხშირად ებმებიან მახეში, რომლებიც სხვა ცხოველებისთვის არის განკუთვნილი. ამასთანავე, ომები და სამოქალაქო არეულობა ნეგატიურ გავლენას ახდენს გორილებზე.\n").openPopup();
+    var marker = L.marker([35, 80]).addTo(map);
+    marker.bindPopup("<b>ბენგალური ვეფხვი</b><br>მე-20 საუკუნის დასაწყისში დედამიწაზე დაახლოებით ასი ათასი ბენგალური ვეფხვი ბინადრობდა. ამჟამად, ველურ ბუნებაში მათი რაოდენობა ოთხი ათასამდეა. ვეფხვებს სჭირდებათ ბინადრობის დიდი არეალი, თუმცა, ადამიანების მიერ ტერიტორიების დაკავებამ მათი რაოდენობა მკვეთრად შეამცირა. ტყეების გაჩეხვამ, ადამიანების დასახლებამ (იმ ადგილებზე, სადაც ეს მტაცებელი ბინადრობდა) ვეფხვების რადიკალური შემცირება გამოიწვია. ამას ერთვოდა და კვლავ გრძელდება ბრაკონიერების თავდასხმაც. ინდოეთი - საუკეთესო ქვეყანა, სადაც ველურ ბუნებაში შეგიძლიათ იხილოთ ვეფხვი, ასევე, მისი ნახვა შესაძლებელია ბანგლადესში, ჩინეთში, სუმატრაში, ციმბირსა და ნეპალში.").openPopup();
+
+</script>
+<div class="box-area">
+    <header>
+        <div class="wrapper">
+            <a href="#">Planet</a>
+        </div>
+        <nav>
+            <a href="site.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="gallery.html">gallery</a>
+        </nav>
+    </header>
+    <div class="banner-area">
+        <h2>გადაშენების პირას მყოფი ცხოველები</h2>
+    </div>
+    <div class="=content-area">
+        <div class="wrapper">
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
